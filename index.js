@@ -20,7 +20,7 @@ app.post('/ai-message', (req, res) => {
           if (err) {
             res.status(500).send('Internal server error');
           } else {
-            util.translateToOrigin(translated_msg, detected_lang, (err, msg) => {
+            util.translateToOrigin(body.response, detected_lang, (err, msg) => {
               if (err) {
                 res.status(200).send(body);
               } else {
